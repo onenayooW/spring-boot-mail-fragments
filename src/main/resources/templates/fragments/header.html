@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Contact US TH</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+            margin: 0;
+            font-family: 'Kanit', sans-serif;
+            font-size: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            font-family: 'Kanit', sans-serif;
+            width: 600px;
+            margin: auto;
+        }
+
+        .container .email-content {
+            background: #ffffff;
+            display: table;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer {
+            padding: 24px 40px;
+            background: #F2F6FD !important;
+            color: #0D162F !important;
+        }
+        img {
+            object-fit: cover;
+            margin: 24px 0;
+        }
+
+        h1, h2, h3, h4, p, td {
+            margin: 0;
+            color: #0D162F !important;
+        }
+
+        h1 {
+            font-size: 22px !important;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 18px !important;
+            font-weight: 400;
+        }
+
+        p, span, td {
+            font-size: 16px !important;
+            line-height: 24px;
+            text-decoration: none;
+        }
+
+        a {
+            color: #1750B9 !important;
+            text-decoration: underline !important;
+        }
+
+        .neutral500 {
+            color: #4A5A6D !important;
+        }
+
+        .info-contact {
+            margin: 0 40px;
+        }
+
+        table {
+            border-spacing: 16px;
+        }
+        td {
+            vertical-align: top;
+        }
+        .info-title {
+            min-width: 100px;
+            text-align: left;
+        }
+        .info-value {
+            text-align: right;
+            width: 100%;
+        }
+    </style>
+    <style id="media-query" type="text/css">
+        @media (max-width: 520px) {
+            .info-contact {
+                margin: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="background: #E1F0FF; display: flex; width: 100%; min-height: 800px;">
+    <div class="container">
+        <div class="email-content">
+            <img src="https://truck2hand-prod-frontend-assets.s3.ap-southeast-1.amazonaws.com/mail-images/t2h-logo.jpg"
+                 alt="https://www.truck2hand.com" height="80" width="80"/>
+            <h1 class="neutral500">แจ้งการใช้งาน</h1>
+            <h2 class="neutral500" style="margin-bottom: 24px;">ข้อความของคุณได้ถูกส่งไปยังเจ้าหน้าที่เรียบร้อยแล้ว</h2>
+
+            <div class="info-contact" style="background: #F2F6FD; border-radius: 8px; padding: 24px;">
+                <table>
+                    <tr>
+                        <td class="info-title neutral500">ชื่อ</td>
+                        <td class="info-value" th:text="${name}"></td>
+                    </tr>
+                    <tr>
+                        <td class="info-title neutral500">เบอร์โทรศัพท์</td>
+                        <td class="info-value" th:text="${phoneNumber}"></td>
+                    </tr>
+                    <tr>
+                        <td class="info-title neutral500">อีเมล</td>
+                        <td class="info-value" th:text="${email}"></td>
+                    </tr>
+                    <tr>
+                        <td class="info-title neutral500">ข้อความ</td>
+                        <td class="info-value" th:text="${message}"></td>
+                    </tr>
+                </table>
+                <img
+                        th:if="${imageUrl != '' and imageUrl != null}"
+                        th:src="${imageUrl}"
+                        src=""
+                        alt="truck2hand-contact"
+                        onerror="this.style.display='none'"
+                        style="width: 100%; margin: 0; border-radius: 8px;"
+                />
+            </div>
+
+            <p class="neutral500" style="margin-bottom: 8px; margin-top: 24px;">ขอบคุณที่ใช้บริการ แล้วพบกัน!</p>
+            <p class="neutral500" style="font-weight: bold; margin-bottom: 40px;">Truck2Hand</p>
+        </div>
+
+        <div class="footer">
+            <p>สามารถติดต่อได้ทุกวัน (ยกเว้นวันหยุดนักขัตฤกษ์)</p>
+            <p style="margin-bottom: 16px; text-decoration: none!important;">
+                ช่วงเวลา <span>08:</span>00 - <span>17:</span>00 น.
+            </p>
+
+            <p>
+                <a href="tel:0818057153">081-805-7153</a> ,
+                <a href="tel:0818057154">081-805-7154</a>
+            </p>
+            <p>LineID: <a href="https://page.line.me/truck2hand" target="_blank">@truck2hand</a></p>
+            <p style="margin-bottom: 16px;">Email:
+                <span style="text-decoration: none !important;  color: #1750B9 !important;">admin@truck2hand.com</span>
+            </p>
+
+            <p style="text-decoration: none !important; color: #0D162F !important;">1494 ถนนเพชรบุรีตัดใหม่, แขวงมักกะสัน,เขตราชเทวี, กรุงเทพ ฯ 10400</p>
+
+            <div style="display: inline-flex; display: -webkit-inline-flex; display: -ms-inline-flexbox; margin-top: 16px;">
+                <a href="https://line.me/R/ti/p/@truck2hand" target="_blank" rel="noreferrer">
+                    <input style="width: 32px; height: 32px; margin-right: 16px;" type="image" alt="social-line"
+                           src="https://truck2hand-prod-frontend-assets.s3.ap-southeast-1.amazonaws.com/mail-images/line.png"/>
+                </a>
+                <a href="https://www.facebook.com/truck2hand" target="_blank" rel="noreferrer">
+                    <input style="width: 32px; height: 32px; margin-right: 16px;" type="image" alt="social-fb"
+                           src="https://truck2hand-prod-frontend-assets.s3.ap-southeast-1.amazonaws.com/mail-images/fb.png"/>
+                </a>
+                <a href="https://www.youtube.com/channel/UCBYGA4gFW82cQr9MzBkmoZw" target="_blank" rel="noreferrer">
+                    <input style="width: 32px; height: 32px; margin-right: 16px;" type="image" alt="social-yt"
+                           src="https://truck2hand-prod-frontend-assets.s3.ap-southeast-1.amazonaws.com/mail-images/yt.png"/>
+                </a>
+                <a href="https://www.instagram.com/truck2hand/" target="_blank" rel="noreferrer">
+                    <input style="width: 32px; height: 32px; margin-right: 16px;" type="image" alt="social-ig"
+                           src="https://truck2hand-prod-frontend-assets.s3.ap-southeast-1.amazonaws.com/mail-images/ig.png"/>
+                </a>
+                <a href="https://www.tiktok.com/@truck2hand/" target="_blank" rel="noreferrer">
+                    <input style="width: 32px; height: 32px;" type="image" alt="social-tiktok"
+                           src="https://truck2hand-prod-frontend-assets.s3.ap-southeast-1.amazonaws.com/mail-images/tiktok.png"/>
+                </a>
+            </div>
+        </div>
+
+        <p style="padding: 8px 40px; background: #F2F6FD !important; text-align: center;">
+            หากต้องการปิดการแจ้งเตือน
+            <a href="https://www.truck2hand.com/myaccount/profile/" target="_blank" style="color: #1750B9 !important;">
+                คลิกที่นี่
+            </a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

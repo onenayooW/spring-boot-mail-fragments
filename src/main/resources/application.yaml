@@ -1,0 +1,5 @@
+spring:
+  mail:
+    host: email-smtp.ap-southeast-1.amazonaws.com
+    username: _
+    password : _
